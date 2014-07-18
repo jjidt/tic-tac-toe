@@ -1,0 +1,15 @@
+.grid {
+  height:100px;
+  width:100px;
+  border: 2px solid black;
+  font-size:90px;
+}
+
+.container {margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  /* Set width to your desired site width */
+  width: 1170px;
+}

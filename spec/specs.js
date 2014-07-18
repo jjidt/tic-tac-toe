@@ -25,7 +25,7 @@ describe("Space", function() {
   });
   describe("create", function() {
     it("creates a new Space object", function() {
-      var testSpace = Object.create(Space);
+      var testSpace = Space.create(Space);
       Space.isPrototypeOf(testSpace).should.equal(true);
     });
   });
@@ -45,6 +45,12 @@ describe("Board", function() {
       var testBoard = Object.create(Board);
       testBoard.initialize();
       testBoard.space1.xCoordinate.should.equal(0);
+    });
+  });
+  describe("create", function() {
+    it("creates a new Board object", function() {
+      var testBoard = Object.create(Board);
+      Board.isPrototypeOf(testBoard).should.equal(true);
     });
   });
 });

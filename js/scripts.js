@@ -35,22 +35,35 @@ var Board = {
     this.space7 = Space.create(2,0);
     this.space8 = Space.create(2,1);
     this.space9 = Space.create(2,2);
+  },
+  create: function() {
+    var newBoard = Object.create(Board);
+    newBoard.initialize();
+    return newBoard;
   }
-}
+};
 
+$(document).ready(function(){
+  var playerTurnX = true;
+  var newBoard = Board.create();
+  var playerX = Player.create("X");
+  var playerO = Player.create("O");
 
-// var Board = {
-//   initialize: function() {
-//     var spaces = [];
-//       for(var i = 0; i < 3; i++){
-//         for(var j = 0; j < 3; j++) {
-//           spaces.push([i,j]);
-//       }
-//     }
-//   spaces.forEach(function(i){
-//     Space.create(i[0],i[1]);
-//   });
-//   }
-// }
+  $(".grid").click(function(){
+    if (playerTurnX){
+      var clickedBox = $(this).attr("id");
+      console.log(newBoard[clickedBox].yCoordinate);
+      newBoard[clickedBox].markBy(playerX);
+      $(this).text(playerX.symbol);
+      playerTurnX =  !playerTurnX;
+    } else {
+      var clickedBox = $(this).attr("id");
+      console.log(newBoard[clickedBox].yCoordinate);
+      newBoard[clickedBox].markBy(player0);
+      $(this).text(player0.symbol);
+      playerTurnX = true;
+    }
+  });
+});
 
 
