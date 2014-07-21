@@ -49,8 +49,28 @@ describe("Board", function() {
   });
   describe("create", function() {
     it("creates a new Board object", function() {
-      var testBoard = Object.create(Board);
+      var testBoard = Board.create();
       Board.isPrototypeOf(testBoard).should.equal(true);
+    });
+  });
+  describe("checkWin", function() {
+    it("checks to see if a player has won the game", function() {
+      var x = Player.create("X");
+      var o = Player.create("O");
+      var testBoard = Board.create();
+      testBoard.space1.markBy(x);
+      testBoard.space2.markBy(x);
+      testBoard.space3.markBy(x);
+      testBoard.checkWin("X").should.equal(true);
+    });
+    it("returns false if the player has not yet won the game", function() {
+      var x = Player.create("X");
+      var o = Player.create("O");
+      var testBoard2 = Board.create();
+      testBoard2.space1.markBy(x);
+      testBoard2.space2.markBy(o);
+      testBoard2.space3.markBy(x);
+      testBoard2.checkWin("X").should.equal(false);
     });
   });
 });
