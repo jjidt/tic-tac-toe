@@ -1,8 +1,8 @@
-**Tic Tac Toe Game
+# Tic Tac Toe Game
 
-***Instructions
+## Instructions
 
 To play the game, download the zip file and open the index.html file in your browser
 
-JJ Idt and Meghan Lindsley
+created by JJ Idt and Meghan Lindsley
 
