@@ -1,6 +1,3 @@
-var checker = function(comboGroup) {
-       this.space1};
-
 var Player = {
   initialize: function(symbol) {
     this.symbol = symbol;
